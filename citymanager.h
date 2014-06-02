@@ -2,10 +2,6 @@
 #define CITYMANAGER_H
 
 #include <QObject>
-#include <QVector>
-#include <QString>
-#include <QMutex>
-#include <QWaitCondition>
 #include <functional>
 
 class QNetworkAccessManager;
