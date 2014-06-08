@@ -8,11 +8,13 @@
 #include <QMutexLocker>
 
 // 获取天气信息接口：http://www.webxml.com.cn/zh_cn/weather_icon.aspx
-CityManager::CityManager()
+CityManager::CityManager(QObject *parent)
+    : QObject(parent)
 {
-    net_ = new QNetworkAccessManager();
+    net_ = new QNetworkAccessManager(this);
     QObject::connect(net_, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(replyFinished(QNetworkReply*)));
+
 }
 
 void CityManager::getSupportProvince(const OnMessage &msg)

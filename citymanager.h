@@ -14,7 +14,7 @@ class CityManager : public QObject
     Q_OBJECT
 
 public:
-    CityManager();
+    CityManager(QObject *parent = 0);
 
     void getSupportProvince(const OnMessage &msg);
     void getSupportCity(const QString &provinceName, const OnMessage &msg);
