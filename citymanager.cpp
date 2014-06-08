@@ -64,4 +64,6 @@ void CityManager::replyFinished(QNetworkReply *reply)
     if (onMessage_) {
         onMessage_(list);
     }
+
+    reply->deleteLater();
 }
